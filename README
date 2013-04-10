@@ -1,0 +1,22 @@
+324CB_AVRAM_Marius
+
+Am creeat o clasa Node si din ea am extins mai multe clase specifice pentru fiecare 
+tip de token din limbajul de programare primitiv introdus de Tema 3. Acestea 
+implementeaza Visitable (metoda accept). 
+
+In clasa Node avem o metoda ce creeaza arborele de parsare dupa algoritmul prezentat 
+la adresa urmatoare: http://cursuri.cs.pub.ro/~poo/wiki/index.php/Constructie_Parse_Tree
+si o metoda de afisare care afiseaza arborele intocmai cum cere cerinta. 
+
+Visitor este implementat in cele doua variante ale sale SemanticVisitor si ResultVisitor.
+Visitor contine metode accept pentru toate tipurile de clase extinse din Node. Acest 
+lucru permite tratarea particulara a fiecarui caz in parte. Metodele visit se apeleaza 
+una pe celalta in functie de descendentii pe care ii au prin intermediul metodei accept
+din Visitable. Acestea returneaza la nivelul superior anumite valori care sunt necesare.
+De exemplu in cazul lui SemanticVisitor returneaza tipul expresiei (Integer, Boolean,
+Nedefinit, NedefiniSemnalat - pentru a nu semnala de mai multe ori o eroare pentru 
+o expresie "dependenta" si Incompatibil - pentru operatii intre tipuri incompatibile.
+Iar in cazul lui ResultVIsitor se returneaza la nivel superior prin intermediul unei 
+variabile valoarea pana la acel nivel.
+
+Scrierile se fac in fisierele mentionate in cerinta.
